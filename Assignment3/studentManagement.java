@@ -240,11 +240,24 @@ class StudentManagementService {
     }
 
     // ---- 6. Ranking Students ----
-    public List<Student> rankStudents() {
-        return students.stream()
-                .sorted(Comparator.comparingInt(Student::getMarks).reversed())
-                .collect(Collectors.toList());
+    public void rankStudentsWithTies() {
+    // Sort students by marks (descending)
+    List<Student> sorted = students.stream()
+            .sorted(Comparator.comparingInt(Student::getMarks).reversed())
+            .collect(Collectors.toList());
+
+    int currentRank = 0;
+    int lastMarks = -1;
+
+    for (Student s : sorted) {
+        if (s.getMarks() != lastMarks) {
+            currentRank++;          // increase rank only when marks change
+            lastMarks = s.getMarks();
+        }
+        System.out.println("Rank " + currentRank + ": " + s);
     }
+}
+
 
     // ---- 7. Delete Student + Cascade ----
     public void deleteStudent(int studentId) {
@@ -361,11 +374,9 @@ class StudentManagementApp {
         System.out.println("\nPassed Students:");
         service.displayStudents(service.getPassedStudents(null, null, null, null, null));
 
-        System.out.println("\nRanking Students:");
-        List<Student> ranked = service.rankStudents();
-        for (int i = 0; i < ranked.size(); i++) {
-            System.out.println("Rank " + (i + 1) + ": " + ranked.get(i));
-        }
+        System.out.println("\nRanking Students (with ties):");
+        service.rankStudentsWithTies();
+
 
         List<Student> femaleByName = service.paginateStudents("F", 7, 8, "name");
         System.out.println("Female students (7–8) ordered by name:");
