@@ -1,6 +1,21 @@
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.io.*;
+
+// ---------- Custom Exceptions ----------
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String msg) {
+        super(msg);
+    }
+}
+
+class InvalidMarksException extends Exception {
+    public InvalidMarksException(String msg) {
+        super(msg);
+    }
+}
+
 
 
 // ---------- ClassRoom ----------
@@ -40,7 +55,7 @@ class Student {
         this.age = age;
     }
 
-    // ---- Business Rule: Pass/Fail ----
+    // ----  Rule: Pass/Fail ----
     public String getStatus() {
         return marks < 50 ? "Failed" : "Passed";
     }
@@ -98,26 +113,136 @@ class Address {
 
 // ---------- Service Layer ----------
 class StudentManagementService {
-    private List<ClassRoom> classes = new ArrayList<>();
-    private List<Student> students = new ArrayList<>();
-    private List<Address> addresses = new ArrayList<>();
+    private List<ClassRoom> classes;
+    private List<Student> students;
+    private List<Address> addresses;
 
-    // ---- Add Methods ----
-    public void addClassRoom(ClassRoom cls) {
-        classes.add(cls);
+    // File names
+    private static final String CLASS_FILE = "classes.txt";
+    private static final String STUDENT_FILE = "students.txt";
+    private static final String ADDRESS_FILE = "addresses.txt";
+    private static final String TOP5_FILE = "top5.txt";
+
+    public StudentManagementService() {
+        classes = loadClasses();
+        students = loadStudents();
+        addresses = loadAddresses();
     }
 
-    public void addStudent(Student student) {
-        // Rule: age must be <= 20
-        if (student.getAge() > 20) {
-            System.out.println("Error: Age > 20, student not inserted -> " + student.getName());
-            return;
+    // ---------- Load / Save Helpers ----------
+    private List<ClassRoom> loadClasses() {
+        List<ClassRoom> list = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(CLASS_FILE))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 2) {
+                    int id = Integer.parseInt(parts[0].trim());
+                    String name = parts[1].trim();
+                    list.add(new ClassRoom(id, name));
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(CLASS_FILE + " not found, starting fresh.");
+        } catch (IOException e) {
+            System.out.println("Error reading " + CLASS_FILE + ": " + e.getMessage());
         }
+        return list;
+    }
+
+    private List<Student> loadStudents() {
+        List<Student> list = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(STUDENT_FILE))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 6) {
+                    int id = Integer.parseInt(parts[0].trim());
+                    String name = parts[1].trim();
+                    int classId = Integer.parseInt(parts[2].trim());
+                    int marks = Integer.parseInt(parts[3].trim());
+                    String gender = parts[4].trim();
+                    int age = Integer.parseInt(parts[5].trim());
+                    list.add(new Student(id, name, classId, marks, gender, age));
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(STUDENT_FILE + " not found, starting fresh.");
+        } catch (IOException e) {
+            System.out.println("Error reading " + STUDENT_FILE + ": " + e.getMessage());
+        }
+        return list;
+    }
+
+    private List<Address> loadAddresses() {
+        List<Address> list = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(ADDRESS_FILE))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 4) {
+                    int id = Integer.parseInt(parts[0].trim());
+                    String pin = parts[1].trim();
+                    String city = parts[2].trim();
+                    int studentId = Integer.parseInt(parts[3].trim());
+                    list.add(new Address(id, pin, city, studentId));
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(ADDRESS_FILE + " not found, starting fresh.");
+        } catch (IOException e) {
+            System.out.println("Error reading " + ADDRESS_FILE + ": " + e.getMessage());
+        }
+        return list;
+    }
+
+    private void saveClasses() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(CLASS_FILE))) {
+            for (ClassRoom c : classes)
+                bw.write(c.getId() + "," + c.getName() + "\n");
+        } catch (IOException e) {
+            System.out.println("Error writing " + CLASS_FILE + ": " + e.getMessage());
+        }
+    }
+
+    private void saveStudents() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(STUDENT_FILE))) {
+            for (Student s : students)
+                bw.write(s.getId() + "," + s.getName() + "," + s.getClassId() + "," +
+                         s.getMarks() + "," + s.getGender() + "," + s.getAge() + "\n");
+        } catch (IOException e) {
+            System.out.println("Error writing " + STUDENT_FILE + ": " + e.getMessage());
+        }
+    }
+
+    private void saveAddresses() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(ADDRESS_FILE))) {
+            for (Address a : addresses)
+                bw.write(a.getId() + "," + a.getPinCode() + "," + a.getCity() + "," + a.getStudentId() + "\n");
+        } catch (IOException e) {
+            System.out.println("Error writing " + ADDRESS_FILE + ": " + e.getMessage());
+        }
+    }
+
+    // ---------- Add Methods ----------
+    public void addClassRoom(ClassRoom cls) {
+        classes.add(cls);
+        saveClasses();
+    }
+
+    public void addStudent(Student student) throws InvalidAgeException, InvalidMarksException {
+        if (student.getAge() > 20)
+            throw new InvalidAgeException("Age > 20 not allowed: " + student.getName());
+        if (student.getMarks() < 0 || student.getMarks() > 100)
+            throw new InvalidMarksException("Marks should be 0–100: " + student.getName());
+
         students.add(student);
+        saveStudents();
     }
 
     public void addAddress(Address addr) {
         addresses.add(addr);
+        saveAddresses();
     }
 
     // ---- Helper Methods ----
@@ -239,91 +364,77 @@ class StudentManagementService {
                 .collect(Collectors.toList());
     }
 
-    // ---- 6. Ranking Students ----
+     // ---- Ranking Students ----
     public void rankStudentsWithTies() {
-    // Sort students by marks (descending)
-    List<Student> sorted = students.stream()
-            .sorted(Comparator.comparingInt(Student::getMarks).reversed())
-            .collect(Collectors.toList());
+        List<Student> sorted = students.stream()
+                .sorted(Comparator.comparingInt(Student::getMarks).reversed())
+                .collect(Collectors.toList());
 
-    int currentRank = 0;
-    int lastMarks = -1;
+        int currentRank = 0;
+        int lastMarks = -1;
+        int count = 0;
 
-    for (Student s : sorted) {
-        if (s.getMarks() != lastMarks) {
-            currentRank++;          // increase rank only when marks change
-            lastMarks = s.getMarks();
+        try (PrintWriter writer = new PrintWriter(new FileWriter(TOP5_FILE))) {
+            for (Student s : sorted) {
+                if (s.getMarks() != lastMarks) {
+                    currentRank++;
+                    lastMarks = s.getMarks();
+                }
+                String line = "Rank " + currentRank + ": " + s;
+                System.out.println(line);
+
+                if (count < 5) writer.println(line);
+                count++;
+            }
+        } catch (IOException e) {
+            System.out.println("Error writing Top 5 file: " + e.getMessage());
         }
-        System.out.println("Rank " + currentRank + ": " + s);
     }
-}
 
-
-    // ---- 7. Delete Student + Cascade ----
+    // ---- Delete Student ----
     public void deleteStudent(int studentId) {
-    // Remove addresses for that student
-    addresses.removeIf(addr -> addr.getStudentId() == studentId);
+        Student stuToRemove = students.stream()
+                .filter(s -> s.getId() == studentId)
+                .findFirst()
+                .orElseThrow(() -> new NoSuchElementException("Student not found"));
 
-    // Find the student to remove
-    Student stuToRemove = null;
-    for (Student s : students) {
-        if (s.getId() == studentId) {
-            stuToRemove = s;
-            break;
-        }
-    }
-
-    if (stuToRemove != null) {
-        // Remove the student
         students.remove(stuToRemove);
+        addresses.removeIf(addr -> addr.getStudentId() == studentId);
+
+        saveStudents();
+        saveAddresses();
+
         System.out.println("Deleted student: " + stuToRemove.getName());
-
-        // Capture the classId in a final/effectively-final variable so lambdas can use it
-        final int removedClassId = stuToRemove.getClassId();
-
-        // Check if any students remain in that class
-        boolean anyLeft = students.stream()
-                                  .anyMatch(s -> s.getClassId() == removedClassId);
-
-        if (!anyLeft) {
-            // Remove the class if empty
-            classes.removeIf(c -> c.getId() == removedClassId);
-            System.out.println("Class deleted as no students left in it.");
-        }
-    } else {
-        System.out.println("Student not found.");
     }
-}
-
     // ---- 8. Pagination ----
     
-public List<Student> paginateStudents(String gender, int start, int end, String orderBy) {
-    // Start with all students
-    Stream<Student> stream = students.stream();
+// public List<Student> paginateStudents(String gender, int start, int end, String orderBy) {
+//     // Start with all students
+//     Stream<Student> stream = students.stream();
 
-    // Filter by gender (if not null)
-    if (gender != null) {
-        stream = stream.filter(s -> s.getGender().equalsIgnoreCase(gender));
-    }
+//     // Filter by gender (if not null)
+//     if (gender != null) {
+//         stream = stream.filter(s -> s.getGender().equalsIgnoreCase(gender));
+//     }
 
-    // Sort order
-    if ("name".equalsIgnoreCase(orderBy)) {
-        stream = stream.sorted(Comparator.comparing(Student::getName));
-    } else if ("marks".equalsIgnoreCase(orderBy)) {
-        stream = stream.sorted(Comparator.comparingInt(Student::getMarks).reversed());
-    }
+//     // Sort order
+//     if ("name".equalsIgnoreCase(orderBy)) {
+//         stream = stream.sorted(Comparator.comparing(Student::getName));
+//     } else if ("marks".equalsIgnoreCase(orderBy)) {
+//         stream = stream.sorted(Comparator.comparingInt(Student::getMarks).reversed());
+//     }
 
-    // Apply pagination
-    return stream
-            .skip(start - 1)                // skip first (start-1) records
-            .limit(end - start + 1)         // take only (end-start+1) records
-            .collect(Collectors.toList());
-}
+//     // Apply pagination
+//     return stream
+//             .skip(start - 1)                // skip first (start-1) records
+//             .limit(end - start + 1)         // take only (end-start+1) records
+//             .collect(Collectors.toList());
+// }
 
 
     // ---- Display Helper ----
-    public void displayStudents(List<Student> list) {
-        for (Student s : list) {
+    public void displayStudents() {
+        for (Student s : students) {
             ClassRoom cls = getClassById(s.getClassId());
             System.out.println(s + " | Class: " + (cls != null ? cls.getName() : "Unknown"));
             System.out.println("  Addresses: " + getAddressesByStudentId(s.getId()));
@@ -335,59 +446,182 @@ public List<Student> paginateStudents(String gender, int start, int end, String 
 class StudentManagementApp {
     public static void main(String[] args) {
         StudentManagementService service = new StudentManagementService();
+        Scanner sc = new Scanner(System.in);
 
-        // Sample Classes
-        service.addClassRoom(new ClassRoom(1, "A"));
-        service.addClassRoom(new ClassRoom(2, "B"));
-        service.addClassRoom(new ClassRoom(3, "C"));
-        service.addClassRoom(new ClassRoom(4, "D"));
+        while (true) {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1. Add Class");
+            System.out.println("2. Add Student");
+            System.out.println("3. Add Address");
+            System.out.println("4. Display All Students");
+            System.out.println("5. Rank Students");
+            System.out.println("6. Delete Student");
+            System.out.println("7. Find Students by Pincode");
+            System.out.println("8. Find Students by City");
+            System.out.println("9. Find Students by Class");
+            System.out.println("10. Get Passed Students");
+            System.out.println("11. Get Failed Students");
+            System.out.println("12. Exit");
+            System.out.print("Enter choice: ");
 
-        // Sample Students
-        service.addStudent(new Student(1, "stud1", 1, 88, "F", 10));
-        service.addStudent(new Student(2, "stud2", 1, 70, "F", 11));
-        service.addStudent(new Student(3, "stud3", 2, 88, "M", 22)); // won't insert (age > 20)
-        service.addStudent(new Student(4, "stud4", 2, 55, "M", 19));
-        service.addStudent(new Student(5, "stud5", 1, 30, "F", 12));
-        service.addStudent(new Student(6, "stud6", 3, 30, "F", 13));
-        service.addStudent(new Student(7, "stud7", 3, 10, "F", 14));
-        service.addStudent(new Student(8, "stud8", 3, 0, "M", 15));
+            try {
+                int choice = sc.nextInt();
+                sc.nextLine(); // consume newline
 
-        // Sample Addresses
-        service.addAddress(new Address(1, "452002", "Indore", 1));
-        service.addAddress(new Address(2, "422002", "Delhi", 1));
-        service.addAddress(new Address(3, "442002", "Indore", 2));
-        service.addAddress(new Address(4, "462002", "Delhi", 4));
-        service.addAddress(new Address(5, "472002", "Indore", 4));
-        service.addAddress(new Address(6, "452002", "Indore", 5));
-        service.addAddress(new Address(7, "452002", "Delhi", 5));
-        service.addAddress(new Address(8, "482002", "Mumbai", 6));
-        service.addAddress(new Address(9, "482002", "Bhopal", 7));
-        service.addAddress(new Address(10, "482002", "Indore", 8));
+                switch (choice) {
+                    case 1 -> {
+                        System.out.print("Enter Class ID: ");
+                        int cid = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Enter Class Name: ");
+                        String cname = sc.nextLine();
+                        service.addClassRoom(new ClassRoom(cid, cname));
+                    }
+                    case 2 -> {
+                        System.out.print("Enter Student ID: ");
+                        int sid = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Enter Student Name: ");
+                        String sname = sc.nextLine();
+                        System.out.print("Enter Class ID: ");
+                        int scid = sc.nextInt();
+                        System.out.print("Enter Marks: ");
+                        int marks = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Enter Gender: ");
+                        String gender = sc.nextLine();
+                        System.out.print("Enter Age: ");
+                        int age = sc.nextInt();
 
-        // ---- Example Queries ----
-        System.out.println("Students by Pincode 482002:");
-        service.displayStudents(service.findStudentsByPincode("482002", null, null, null));
+                        service.addStudent(new Student(sid, sname, scid, marks, gender, age));
+                    }
+                    case 3 -> {
+                        System.out.print("Enter Address ID: ");
+                        int aid = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Enter PinCode: ");
+                        String pin = sc.nextLine();
+                        System.out.print("Enter City: ");
+                        String city = sc.nextLine();
+                        System.out.print("Enter Student ID: ");
+                        int sid = sc.nextInt();
 
-        System.out.println("\nStudents by City Indore:");
-        service.displayStudents(service.findStudentsByCity("Indore", null, null, null));
+                        service.addAddress(new Address(aid, pin, city, sid));
+                    }
+                    case 4 -> service.displayStudents();
+                    case 5 -> service.rankStudentsWithTies();
+                    case 6 -> {
+                        System.out.print("Enter Student ID to delete: ");
+                        int delId = sc.nextInt();
+                        service.deleteStudent(delId);
+                    }
+                    case 7 -> {
+                        System.out.print("Enter Pincode: ");
+                        String pin = sc.nextLine();
+                        System.out.print("Filter by Gender (or press Enter to skip): ");
+                        String gender = sc.nextLine();
+                        gender = gender.isEmpty() ? null : gender;
+                        System.out.print("Filter by Age (or 0 to skip): ");
+                        int age = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Filter by Class Name (or press Enter to skip): ");
+                        String className = sc.nextLine();
+                        className = className.isEmpty() ? null : className;
 
-        System.out.println("\nPassed Students:");
-        service.displayStudents(service.getPassedStudents(null, null, null, null, null));
+                        List<Student> results = service.findStudentsByPincode(pin, gender, age == 0 ? null : age, className);
+                        results.forEach(System.out::println);
+                    }
+                    case 8 -> {
+                        System.out.print("Enter City: ");
+                        String city = sc.nextLine();
+                        System.out.print("Filter by Gender (or press Enter to skip): ");
+                        String gender = sc.nextLine();
+                        gender = gender.isEmpty() ? null : gender;
+                        System.out.print("Filter by Age (or 0 to skip): ");
+                        int age = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Filter by Class Name (or press Enter to skip): ");
+                        String className = sc.nextLine();
+                        className = className.isEmpty() ? null : className;
 
-        System.out.println("\nRanking Students (with ties):");
-        service.rankStudentsWithTies();
+                        List<Student> results = service.findStudentsByCity(city, gender, age == 0 ? null : age, className);
+                        results.forEach(System.out::println);
+                    }
+                    case 9 -> {
+                        System.out.print("Enter Class Name: ");
+                        String className = sc.nextLine();
+                        System.out.print("Filter by Gender (or press Enter to skip): ");
+                        String gender = sc.nextLine();
+                        gender = gender.isEmpty() ? null : gender;
+                        System.out.print("Filter by Age (or 0 to skip): ");
+                        int age = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Filter by City (or press Enter to skip): ");
+                        String city = sc.nextLine();
+                        city = city.isEmpty() ? null : city;
+                        System.out.print("Filter by Pincode (or press Enter to skip): ");
+                        String pinCode = sc.nextLine();
+                        pinCode = pinCode.isEmpty() ? null : pinCode;
 
+                        List<Student> results = service.findStudentsByClass(className, gender, age == 0 ? null : age, city, pinCode);
+                        results.forEach(System.out::println);
+                    }
+                    case 10 -> {
+                        System.out.print("Filter by Gender (or press Enter to skip): ");
+                        String gender = sc.nextLine();
+                        gender = gender.isEmpty() ? null : gender;
+                        System.out.print("Filter by Age (or 0 to skip): ");
+                        int age = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Filter by Class Name (or press Enter to skip): ");
+                        String className = sc.nextLine();
+                        className = className.isEmpty() ? null : className;
+                        System.out.print("Filter by City (or press Enter to skip): ");
+                        String city = sc.nextLine();
+                        city = city.isEmpty() ? null : city;
+                        System.out.print("Filter by Pincode (or press Enter to skip): ");
+                        String pinCode = sc.nextLine();
+                        pinCode = pinCode.isEmpty() ? null : pinCode;
 
-        List<Student> femaleByName = service.paginateStudents("F", 7, 8, "name");
-        System.out.println("Female students (7–8) ordered by name:");
-        femaleByName.forEach(System.out::println);
+                        List<Student> results = service.getPassedStudents(gender, age == 0 ? null : age, className, city, pinCode);
+                        results.forEach(System.out::println);
+                    }
+                    case 11 -> {
+                        System.out.print("Filter by Gender (or press Enter to skip): ");
+                        String gender = sc.nextLine();
+                        gender = gender.isEmpty() ? null : gender;
+                        System.out.print("Filter by Age (or 0 to skip): ");
+                        int age = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Filter by Class Name (or press Enter to skip): ");
+                        String className = sc.nextLine();
+                        className = className.isEmpty() ? null : className;
+                        System.out.print("Filter by City (or press Enter to skip): ");
+                        String city = sc.nextLine();
+                        city = city.isEmpty() ? null : city;
+                        System.out.print("Filter by Pincode (or press Enter to skip): ");
+                        String pinCode = sc.nextLine();
+                        pinCode = pinCode.isEmpty() ? null : pinCode;
 
-        List<Student> femaleByMarks = service.paginateStudents("F", 1, 5, "marks");
-        System.out.println("\nFemale students (1–5) ordered by marks:");
-        femaleByMarks.forEach(System.out::println);
+                        List<Student> results = service.getFailedStudents(gender, age == 0 ? null : age, className, city, pinCode);
+                        results.forEach(System.out::println);
+                    }
+                    case 12 -> {
+                        System.out.println("Exiting...");
+                        sc.close();
+                        return;
+                    }
+                    default -> System.out.println("Invalid choice!");
+                }
 
-
-        System.out.println("\nDeleting student id=6");
-        service.deleteStudent(6);
+            } catch (InputMismatchException e) {
+                System.out.println("⚠ Invalid input! Please enter numbers where required.");
+                sc.nextLine(); // clear buffer
+            } catch (InvalidAgeException | InvalidMarksException e) {
+                System.out.println("⚠ Business Rule Error: " + e.getMessage());
+            } catch (Exception e) {
+                System.out.println("⚠ Unexpected Error: " + e.getMessage());
+            }
+        }
     }
 }
