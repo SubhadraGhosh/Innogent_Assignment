@@ -408,28 +408,28 @@ class StudentManagementService {
     }
     // ---- 8. Pagination ----
     
-// public List<Student> paginateStudents(String gender, int start, int end, String orderBy) {
-//     // Start with all students
-//     Stream<Student> stream = students.stream();
+public List<Student> paginateStudents(String gender, int start, int end, String orderBy) {
+    // Start with all students
+    Stream<Student> stream = students.stream();
 
-//     // Filter by gender (if not null)
-//     if (gender != null) {
-//         stream = stream.filter(s -> s.getGender().equalsIgnoreCase(gender));
-//     }
+    // Filter by gender (if not null)
+    if (gender != null) {
+        stream = stream.filter(s -> s.getGender().equalsIgnoreCase(gender));
+    }
 
-//     // Sort order
-//     if ("name".equalsIgnoreCase(orderBy)) {
-//         stream = stream.sorted(Comparator.comparing(Student::getName));
-//     } else if ("marks".equalsIgnoreCase(orderBy)) {
-//         stream = stream.sorted(Comparator.comparingInt(Student::getMarks).reversed());
-//     }
+    // Sort order
+    if ("name".equalsIgnoreCase(orderBy)) {
+        stream = stream.sorted(Comparator.comparing(Student::getName));
+    } else if ("marks".equalsIgnoreCase(orderBy)) {
+        stream = stream.sorted(Comparator.comparingInt(Student::getMarks).reversed());
+    }
 
-//     // Apply pagination
-//     return stream
-//             .skip(start - 1)                // skip first (start-1) records
-//             .limit(end - start + 1)         // take only (end-start+1) records
-//             .collect(Collectors.toList());
-// }
+    // Apply pagination
+    return stream
+            .skip(start - 1)                // skip first (start-1) records
+            .limit(end - start + 1)         // take only (end-start+1) records
+            .collect(Collectors.toList());
+}
 
 
     // ---- Display Helper ----
@@ -606,7 +606,29 @@ class StudentManagementApp {
                         List<Student> results = service.getFailedStudents(gender, age == 0 ? null : age, className, city, pinCode);
                         results.forEach(System.out::println);
                     }
-                    case 12 -> {
+                    case  12 ->{
+                        
+                        System.out.print("Enter Gender to filter (or leave blank for all): ");
+                        String genderInput = sc.nextLine();
+                        String gender = genderInput.isEmpty() ? null : genderInput;
+
+                        System.out.print("Enter Start Index: ");
+                        int start = sc.nextInt();
+                        System.out.print("Enter End Index: ");
+                        int end = sc.nextInt();
+                        sc.nextLine(); // consume newline
+
+                        System.out.print("Enter order by (name/marks): ");
+                        String orderByInput = sc.nextLine();
+                        String orderBy = orderByInput.isEmpty() ? null : orderByInput;
+
+                        List<Student> paginated = service.paginateStudents(gender, start, end, orderBy);
+                        System.out.println("Paginated Students:");
+                        paginated.forEach(System.out::println);
+                    }
+
+                    
+                    case 13 -> {
                         System.out.println("Exiting...");
                         sc.close();
                         return;
