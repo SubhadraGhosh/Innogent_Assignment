@@ -6,6 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="678bfdb9-3a10-4354-ae1a-3e62de1b80d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/DeadlockSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/DeadlockSimulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/Paper.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/Paper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/Pen.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/Pen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/Task1.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/Task1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/Task2.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/Task2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/TestThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/TestThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/deadLockSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/deadLockSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/executorServiceAndCallable/CountFileLines.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/executorServiceAndCallable/CountFileLines.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/executorServiceAndCallable/ExecutorEasy.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/executorServiceAndCallable/ExecutorEasy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/executorServiceAndCallable/executorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/executorServiceAndCallable/executorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/performanceComparison/PerformanceComparisonSimple.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/performanceComparison/PerformanceComparisonSimple.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/performanceComparison/performanceComparision.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/performanceComparison/performanceComparision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/readWriteLock/ReadWriteEasy.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/readWriteLock/ReadWriteEasy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/readWriteLock/SharedData.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/readWriteLock/SharedData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/readWriteLock/readWriteLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/readWriteLock/readWriteLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/semaphore/ParkingLot.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/semaphore/ParkingLot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/semaphore/SemaphoreEasy.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/semaphore/SemaphoreEasy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/semaphore/semaphore.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/semaphore/semaphore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/threadCordination/LatchEasy.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/threadCordination/LatchEasy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/threadCordination/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/threadCordination/Worker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment6/threadCordination/threadCordination.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/threadCordination/threadCordination.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,23 +51,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/THINKPAD L460/Desktop/Innogent",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/THINKPAD L460/Desktop/Innogent&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -65,7 +86,8 @@
       <workItem from="1759236550258" duration="1065000" />
       <workItem from="1759297063434" duration="5748000" />
       <workItem from="1759907156437" duration="1299000" />
-      <workItem from="1759995005412" duration="5238000" />
+      <workItem from="1759995005412" duration="12722000" />
+      <workItem from="1760078218994" duration="3470000" />
     </task>
     <servers />
   </component>

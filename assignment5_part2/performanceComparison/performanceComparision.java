@@ -62,8 +62,8 @@ class PerformanceComparisonSimple {
         System.out.println("Time with ExecutorService: " + (end2 - start2) + " ms");
 
 
-        System.out.println("\nBoth results are same: " + (sumParallel == totalSum));
+        System.out.println("\nBoth sum are same: " + (sumParallel == totalSum));
         System.out.println("Faster approach: " +
-                ((end1 - start1) < (end2 - start2) ? "Parallel Stream ✅" : "ExecutorService ✅"));
+                ((end1 - start1) < (end2 - start2) ? "Parallel Stream " : "ExecutorService "));
     }
 }
