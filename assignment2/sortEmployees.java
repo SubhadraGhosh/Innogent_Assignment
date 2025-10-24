@@ -55,13 +55,13 @@ class Main {
     public static void main(String[] args) {
         // Creating Employee objects
         Employee e1 = new Employee(0, "Ram", "IT", 100000);
-        Employee e2 = new Employee(1, "Shyam", "E", 50000);
+
+
+        // Adding to list
+        ArrayList<Employee> list = new ArrayList<>(); Employee e2 = new Employee(1, "Shyam", "E", 50000);
         Employee e3 = new Employee(2, "Krishna", "Math", 40000);
         Employee e4 = new Employee(3, "Hariom", "Bank", 80000);
         Employee e5 = new Employee(4, "Bharat", "IT", 60000);
-
-        // Adding to list
-        ArrayList<Employee> list = new ArrayList<>();
         list.add(e1);
         list.add(e2);
         list.add(e3);

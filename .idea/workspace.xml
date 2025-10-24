@@ -6,27 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="678bfdb9-3a10-4354-ae1a-3e62de1b80d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/DeadlockSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/DeadlockSimulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/Paper.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/Paper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/Pen.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/Pen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/Task1.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/Task1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/Task2.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/Task2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/TestThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/TestThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/deadLockSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/deadLockSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/executorServiceAndCallable/CountFileLines.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/executorServiceAndCallable/CountFileLines.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/executorServiceAndCallable/ExecutorEasy.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/executorServiceAndCallable/ExecutorEasy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/executorServiceAndCallable/executorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/executorServiceAndCallable/executorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/performanceComparison/PerformanceComparisonSimple.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/performanceComparison/PerformanceComparisonSimple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/performanceComparison/performanceComparision.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/performanceComparison/performanceComparision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/readWriteLock/ReadWriteEasy.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/readWriteLock/ReadWriteEasy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/readWriteLock/SharedData.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/readWriteLock/SharedData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/readWriteLock/readWriteLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/readWriteLock/readWriteLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/semaphore/ParkingLot.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/semaphore/ParkingLot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/semaphore/SemaphoreEasy.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/semaphore/SemaphoreEasy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/semaphore/semaphore.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/semaphore/semaphore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/threadCordination/LatchEasy.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/threadCordination/LatchEasy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/threadCordination/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/threadCordination/Worker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment6/threadCordination/threadCordination.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment5_part2/threadCordination/threadCordination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment2/sortEmployees.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/sortEmployees.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +48,69 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Innogent" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Innogent" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Innogent" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="Innogent" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="Innogent" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -88,6 +131,11 @@
       <workItem from="1759907156437" duration="1299000" />
       <workItem from="1759995005412" duration="12722000" />
       <workItem from="1760078218994" duration="3470000" />
+      <workItem from="1760090955596" duration="213000" />
+      <workItem from="1760436565680" duration="4555000" />
+      <workItem from="1761200639853" duration="2749000" />
+      <workItem from="1761203913319" duration="5440000" />
+      <workItem from="1761305061170" duration="310000" />
     </task>
     <servers />
   </component>
