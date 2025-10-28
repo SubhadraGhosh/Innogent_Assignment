@@ -4,7 +4,7 @@ class Fact {
         int fact = 1;        // local variable → Stack
 
         // Loop variable 'i' is also stored in Stack
-        for(int i = 1; i <= n; i++) {
+        for(int i = 2; i <= n; i++) {
             fact *= i;       // intermediate calculation stored in Stack
         }
 

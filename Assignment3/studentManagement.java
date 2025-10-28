@@ -461,7 +461,8 @@ class StudentManagementApp {
             System.out.println("9. Find Students by Class");
             System.out.println("10. Get Passed Students");
             System.out.println("11. Get Failed Students");
-            System.out.println("12. Exit");
+            System.out.println("12. Pagination");
+            System.out.println("13. Exit");
             System.out.print("Enter choice: ");
 
             try {
@@ -637,12 +638,12 @@ class StudentManagementApp {
                 }
 
             } catch (InputMismatchException e) {
-                System.out.println("⚠ Invalid input! Please enter numbers where required.");
+                System.out.println("Invalid input! Please enter numbers where required.");
                 sc.nextLine(); // clear buffer
             } catch (InvalidAgeException | InvalidMarksException e) {
-                System.out.println("⚠ Business Rule Error: " + e.getMessage());
+                System.out.println("Business Rule Error: " + e.getMessage());
             } catch (Exception e) {
-                System.out.println("⚠ Unexpected Error: " + e.getMessage());
+                System.out.println("Unexpected Error: " + e.getMessage());
             }
         }
     }

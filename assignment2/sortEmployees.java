@@ -26,8 +26,8 @@ class Employee implements Comparable<Employee> {
         int nameCompare = this.name.compareTo(other.name);
         if (nameCompare != 0) return nameCompare;
 
-        // If both department and name are same, compare by salary
-        return Integer.compare(this.salary, other.salary);
+//        // If both department and name are same, compare by salary
+          return Integer.compare(this.salary, other.salary);
     }
 
     // To display employee details
@@ -53,15 +53,20 @@ class SalaryDescComparator implements Comparator<Employee> {
 
 class Main {
     public static void main(String[] args) {
+
+
         // Creating Employee objects
         Employee e1 = new Employee(0, "Ram", "IT", 100000);
-
-
-        // Adding to list
-        ArrayList<Employee> list = new ArrayList<>(); Employee e2 = new Employee(1, "Shyam", "E", 50000);
+        Employee e2 = new Employee(1, "Shyam", "E", 50000);
         Employee e3 = new Employee(2, "Krishna", "Math", 40000);
         Employee e4 = new Employee(3, "Hariom", "Bank", 80000);
-        Employee e5 = new Employee(4, "Bharat", "IT", 60000);
+        Employee e5 = new Employee(4, "Ram", "IT", 60000);
+
+
+        ArrayList<Employee> list = new ArrayList<>();
+
+        // Adding to list
+
         list.add(e1);
         list.add(e2);
         list.add(e3);

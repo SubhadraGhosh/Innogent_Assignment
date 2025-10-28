@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="678bfdb9-3a10-4354-ae1a-3e62de1b80d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/StudentManagementApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/StudentManagementApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment3/studentManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment3/studentManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/FactorialRecursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/FactorialRecursion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment1/factorialIteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/factorialIteration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assignment2/sortEmployees.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/sortEmployees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/daoImpli/AuthorDaoImpli.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/daoImpli/AuthorDaoImpli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/dto/AuthorRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/dto/AuthorRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/dto/AuthorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/dto/AuthorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/dto/BookResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/dto/BookResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/repository/BookRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment7_LMS/src/main/java/com/example/demo/repository/BookRepo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +144,10 @@
       <workItem from="1760436565680" duration="4555000" />
       <workItem from="1761200639853" duration="2749000" />
       <workItem from="1761203913319" duration="5440000" />
-      <workItem from="1761305061170" duration="310000" />
+      <workItem from="1761305061170" duration="1872000" />
+      <workItem from="1761543577731" duration="9730000" />
+      <workItem from="1761628630720" duration="5245000" />
+      <workItem from="1761635166885" duration="8630000" />
     </task>
     <servers />
   </component>

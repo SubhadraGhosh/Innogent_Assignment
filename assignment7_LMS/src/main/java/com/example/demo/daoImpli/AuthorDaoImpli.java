@@ -1,6 +1,8 @@
 package com.example.demo.daoImpli;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.demo.repository.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.example.demo.dao.AuthorDao;
@@ -15,6 +17,9 @@ public class AuthorDaoImpli implements AuthorDao {
     @Autowired
     private AuthorRepo repo;
 
+    @Autowired
+    private BookRepo bookRepo;
+
     @Override
     public AuthorResponse addAuthor(AuthorRequest request) {
         Author author = new Author();
@@ -25,6 +30,9 @@ public class AuthorDaoImpli implements AuthorDao {
         AuthorResponse response = new AuthorResponse();
         response.setName(author.getName());
         response.setEmail(author.getEmail());
+        List<String> books = bookRepo.findAllBooksOfThisAuthor(author.getId());
+
+        response.setBooks(books);
         return response;
     }
 
@@ -38,7 +46,9 @@ public class AuthorDaoImpli implements AuthorDao {
             res.setName(auth.getName());
             res.setEmail(auth.getEmail());
             res.setId(auth.getId());
+            List<String> books = bookRepo.findAllBooksOfThisAuthor(auth.getId());
 
+            res.setBooks(books);
             response.add(res);
         }
         return response;
@@ -51,6 +61,9 @@ public class AuthorDaoImpli implements AuthorDao {
         response.setEmail(author.getName());
         response.setName(author.getEmail());
         response.setId(author.getId());
+        List<String> books = bookRepo.findAllBooksOfThisAuthor(author.getId());
+
+        response.setBooks(books);
         return response;
     }
 

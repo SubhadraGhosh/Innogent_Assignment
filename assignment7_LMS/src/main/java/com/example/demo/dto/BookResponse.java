@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class BookResponse {
-
     private Integer bookId;
     private String bookTitle;
     private Integer bookPrice;

@@ -1,7 +1,7 @@
 class Fact {
 
     // Recursive factorial method (stored in Method Area)
-    public static int fact(int n) {  
+    public static long fact(int n) {
         // 'n' is a local variable → stored in Stack
         if (n == 0 || n == 1) 
             return 1; // return value stored in Stack
