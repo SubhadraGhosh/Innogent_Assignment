@@ -1,0 +1,45 @@
+2025-10-31 14:56:07,572 [INFO] Prisma DB connected!
+2025-10-31 14:56:08,710 [INFO] HTTP Request: GET http://localhost:50147/status "HTTP/1.1 200 OK"
+2025-10-31 14:57:42,171 [INFO] Calling Downloading Clients
+2025-10-31 14:57:42,443 [INFO] HTTP Request: POST http://localhost:50147/ "HTTP/1.1 200 OK"
+2025-10-31 14:57:42,443 [ERROR] No clients found!
+2025-10-31 14:57:42,443 [ERROR] 404: No clients found!
+2025-10-31 14:58:05,921 [INFO] Calling Downloading Clients
+2025-10-31 14:58:06,227 [INFO] HTTP Request: POST http://localhost:50147/ "HTTP/1.1 200 OK"
+2025-10-31 14:58:06,227 [ERROR] No clients found!
+2025-10-31 14:58:06,231 [ERROR] 404: No clients found!
+2025-10-31 15:02:54,667 [INFO] Prisma DB disconnected!
+2025-10-31 15:03:10,448 [INFO] Prisma DB connected!
+2025-10-31 15:03:11,440 [INFO] HTTP Request: GET http://localhost:61320/status "HTTP/1.1 200 OK"
+2025-10-31 15:10:45,358 [INFO] Prisma DB disconnected!
+2025-10-31 15:10:51,121 [INFO] Prisma DB connected!
+2025-10-31 15:10:52,140 [INFO] HTTP Request: GET http://localhost:60686/status "HTTP/1.1 200 OK"
+2025-10-31 15:11:12,271 [INFO] Calling Downloading Clients
+2025-10-31 15:11:12,531 [INFO] HTTP Request: POST http://localhost:60686/ "HTTP/1.1 200 OK"
+2025-10-31 15:11:12,531 [ERROR] The table `client` does not exist in the current database.
+2025-10-31 15:12:55,784 [INFO] HTTP Request: POST http://localhost:60686/ "HTTP/1.1 200 OK"
+2025-10-31 15:12:55,791 [INFO] HTTP Request: POST http://localhost:60686/ "HTTP/1.1 200 OK"
+2025-10-31 15:12:55,796 [INFO] HTTP Request: POST http://localhost:60686/ "HTTP/1.1 200 OK"
+2025-10-31 15:12:55,807 [INFO] HTTP Request: POST http://localhost:60686/ "HTTP/1.1 200 OK"
+2025-10-31 15:15:18,662 [INFO] Prisma DB disconnected!
+2025-10-31 15:15:34,368 [INFO] Prisma DB connected!
+2025-10-31 15:15:35,431 [INFO] HTTP Request: GET http://localhost:52139/status "HTTP/1.1 200 OK"
+2025-10-31 15:16:20,112 [INFO] HTTP Request: POST http://localhost:52139/ "HTTP/1.1 200 OK"
+2025-10-31 15:16:20,112 [INFO] HTTP Request: POST http://localhost:52139/ "HTTP/1.1 200 OK"
+2025-10-31 15:16:20,126 [INFO] HTTP Request: POST http://localhost:52139/ "HTTP/1.1 200 OK"
+2025-10-31 15:16:20,137 [INFO] HTTP Request: POST http://localhost:52139/ "HTTP/1.1 200 OK"
+2025-10-31 15:17:50,945 [INFO] Calling Downloading Clients
+2025-10-31 15:17:51,221 [INFO] HTTP Request: POST http://localhost:52139/ "HTTP/1.1 200 OK"
+2025-10-31 15:17:51,224 [ERROR] The table `client` does not exist in the current database.
+2025-10-31 15:25:43,872 [INFO] Prisma DB disconnected!
+2025-10-31 15:26:06,401 [INFO] Prisma DB connected!
+2025-10-31 15:26:07,450 [INFO] HTTP Request: GET http://localhost:55397/status "HTTP/1.1 200 OK"
+2025-10-31 15:31:47,071 [INFO] Prisma DB disconnected!
+2025-10-31 15:32:19,598 [INFO] Prisma DB connected!
+2025-10-31 15:32:20,602 [INFO] HTTP Request: GET http://localhost:55433/status "HTTP/1.1 200 OK"
+2025-10-31 15:32:45,729 [INFO] HTTP Request: POST http://localhost:55433/ "HTTP/1.1 200 OK"
+2025-10-31 15:32:45,729 [INFO] HTTP Request: POST http://localhost:55433/ "HTTP/1.1 200 OK"
+2025-10-31 15:32:45,745 [INFO] HTTP Request: POST http://localhost:55433/ "HTTP/1.1 200 OK"
+2025-10-31 15:32:45,747 [INFO] HTTP Request: POST http://localhost:55433/ "HTTP/1.1 200 OK"
+2025-10-31 15:33:01,959 [INFO] Calling Downloading Clients
+2025-10-31 15:33:02,212 [INFO] HTTP Request: POST http://localhost:55433/ "HTTP/1.1 200 OK"
