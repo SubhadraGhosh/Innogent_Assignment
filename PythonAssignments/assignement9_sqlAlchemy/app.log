@@ -1,0 +1,345 @@
+2025-11-01 01:14:06,934 - INFO -  Database tables created successfully.
+2025-11-01 01:14:06,935 - INFO -  FastAPI application instance created.
+2025-11-01 01:14:06,941 - INFO -  Product router loaded successfully.
+2025-11-01 01:14:06,951 - INFO -  Company router loaded successfully.
+2025-11-01 01:14:06,954 - INFO -  Category router loaded successfully.
+2025-11-01 01:15:08,793 - INFO -  Database tables created successfully.
+2025-11-01 01:15:08,794 - INFO -  FastAPI application instance created.
+2025-11-01 01:15:08,802 - INFO -  Product router loaded successfully.
+2025-11-01 01:15:08,811 - INFO -  Company router loaded successfully.
+2025-11-01 01:15:08,813 - INFO -  Category router loaded successfully.
+2025-11-01 01:20:10,389 - INFO -  Database tables created successfully.
+2025-11-01 01:20:10,394 - INFO -  FastAPI application instance created.
+2025-11-01 01:20:10,405 - INFO -  Product router loaded successfully.
+2025-11-01 01:20:10,416 - INFO -  Company router loaded successfully.
+2025-11-01 01:20:10,419 - INFO -  Category router loaded successfully.
+2025-11-01 01:21:09,829 - INFO -  Database tables created successfully.
+2025-11-01 01:21:09,829 - INFO -  FastAPI application instance created.
+2025-11-01 01:21:09,835 - INFO -  Product router loaded successfully.
+2025-11-01 01:21:09,841 - INFO -  Company router loaded successfully.
+2025-11-01 01:21:09,844 - INFO -  Category router loaded successfully.
+2025-11-01 01:21:51,525 - INFO -  Database tables created successfully.
+2025-11-01 01:21:51,526 - INFO -  FastAPI application instance created.
+2025-11-01 01:21:51,531 - INFO -  Product router loaded successfully.
+2025-11-01 01:21:51,537 - INFO -  Company router loaded successfully.
+2025-11-01 01:21:51,539 - INFO -  Category router loaded successfully.
+2025-11-01 01:25:13,023 - INFO - Database engine created successfully.
+2025-11-01 01:25:13,100 - INFO -  Database tables created successfully.
+2025-11-01 01:25:13,101 - INFO -  FastAPI application instance created.
+2025-11-01 01:25:13,111 - INFO -  Product router loaded successfully.
+2025-11-01 01:25:13,118 - INFO -  Company router loaded successfully.
+2025-11-01 01:25:13,121 - INFO -  Category router loaded successfully.
+2025-11-01 01:29:54,708 - INFO - Database engine created successfully.
+2025-11-01 01:29:54,774 - INFO -  Database tables created successfully.
+2025-11-01 01:29:54,775 - INFO -  FastAPI application instance created.
+2025-11-01 01:29:54,786 - INFO -  Product router loaded successfully.
+2025-11-01 01:29:54,794 - INFO -  Company router loaded successfully.
+2025-11-01 01:29:54,797 - INFO -  Category router loaded successfully.
+2025-11-01 01:32:14,275 - INFO -  '/' endpoint accessed.
+2025-11-01 01:32:50,062 - INFO - Fetching all products with skip=0, limit=10
+2025-11-01 01:32:50,140 - INFO - Fetched 2 products
+2025-11-01 01:34:20,632 - ERROR - Error during DB session usage: [{'type': 'int_parsing', 'loc': ('path', 'product_id'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'search'}]
+Traceback (most recent call last):
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\core\database.py", line 41, in get_db
+    yield db
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\concurrency.py", line 27, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 431, in app
+    raise validation_error
+fastapi.exceptions.RequestValidationError: [{'type': 'int_parsing', 'loc': ('path', 'product_id'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'search'}]
+2025-11-01 01:37:37,073 - INFO - Database engine created successfully.
+2025-11-01 01:37:37,137 - INFO -  Database tables created successfully.
+2025-11-01 01:37:37,138 - INFO -  FastAPI application instance created.
+2025-11-01 01:37:37,143 - INFO -  Product router loaded successfully.
+2025-11-01 01:37:37,151 - INFO -  Company router loaded successfully.
+2025-11-01 01:37:37,154 - INFO -  Category router loaded successfully.
+2025-11-01 01:41:43,519 - INFO - Database engine created successfully.
+2025-11-01 01:41:43,602 - INFO -  Database tables created successfully.
+2025-11-01 01:41:43,603 - INFO -  FastAPI application instance created.
+2025-11-01 01:41:43,608 - INFO -  Product router loaded successfully.
+2025-11-01 01:41:43,614 - INFO -  Company router loaded successfully.
+2025-11-01 01:41:43,616 - INFO -  Category router loaded successfully.
+2025-11-01 01:42:20,836 - INFO - Searching products | Query='software', CompanyID=2, skip=0, limit=10
+2025-11-01 01:42:20,850 - ERROR - Error during DB session usage: <function ilike_op at 0x0000024774086020>
+Traceback (most recent call last):
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\core\database.py", line 41, in get_db
+    yield db
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\concurrency.py", line 27, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 291, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\routers\product.py", line 33, in search_products
+    products = crud.search_products(db, q, company_id, skip, limit)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\crud\crud.py", line 77, in search_products
+    models.Product.category.ilike(f"%{q}%"),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\operators.py", line 758, in ilike
+    return self.operate(ilike_op, other, escape=escape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\attributes.py", line 453, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\operators.py", line 2100, in ilike_op
+    return a.ilike(b, escape=escape)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\operators.py", line 758, in ilike
+    return self.operate(ilike_op, other, escape=escape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\operators.py", line 367, in operate
+    raise NotImplementedError(str(op))
+NotImplementedError: <function ilike_op at 0x0000024774086020>
+2025-11-01 01:42:46,925 - INFO - Fetching all products with skip=0, limit=10
+2025-11-01 01:42:46,934 - INFO - Fetched 2 products
+2025-11-01 01:42:58,463 - INFO - Searching products | Query='software', CompanyID=2, skip=0, limit=10
+2025-11-01 01:42:58,464 - ERROR - Error during DB session usage: <function ilike_op at 0x0000024774086020>
+Traceback (most recent call last):
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\core\database.py", line 41, in get_db
+    yield db
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\concurrency.py", line 27, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 291, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\routers\product.py", line 33, in search_products
+    products = crud.search_products(db, q, company_id, skip, limit)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\crud\crud.py", line 77, in search_products
+    models.Product.category.ilike(f"%{q}%"),
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\operators.py", line 758, in ilike
+    return self.operate(ilike_op, other, escape=escape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\orm\attributes.py", line 453, in operate
+    return op(self.comparator, *other, **kwargs)  # type: ignore[no-any-return]  # noqa: E501
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\operators.py", line 2100, in ilike_op
+    return a.ilike(b, escape=escape)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\operators.py", line 758, in ilike
+    return self.operate(ilike_op, other, escape=escape)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\sqlalchemy\sql\operators.py", line 367, in operate
+    raise NotImplementedError(str(op))
+NotImplementedError: <function ilike_op at 0x0000024774086020>
+2025-11-01 01:48:20,386 - INFO - Database engine created successfully.
+2025-11-01 01:48:20,458 - INFO -  Database tables created successfully.
+2025-11-01 01:48:20,459 - INFO -  FastAPI application instance created.
+2025-11-01 01:48:20,469 - INFO -  Product router loaded successfully.
+2025-11-01 01:48:20,594 - INFO -  Company router loaded successfully.
+2025-11-01 01:48:20,850 - INFO -  Category router loaded successfully.
+2025-11-01 01:51:17,014 - INFO - Database engine created successfully.
+2025-11-01 01:51:17,067 - INFO -  Database tables created successfully.
+2025-11-01 01:51:17,067 - INFO -  FastAPI application instance created.
+2025-11-01 01:51:17,073 - INFO -  Product router loaded successfully.
+2025-11-01 01:51:17,079 - INFO -  Company router loaded successfully.
+2025-11-01 01:51:17,082 - INFO -  Category router loaded successfully.
+2025-11-01 01:51:27,858 - INFO -  '/' endpoint accessed.
+2025-11-01 01:51:47,013 - INFO - Fetching all products with skip=0, limit=10
+2025-11-01 01:51:47,044 - INFO - Fetched 2 products
+2025-11-01 01:52:05,468 - INFO - Searching products | Query='software', CompanyID=2, skip=0, limit=10
+2025-11-01 01:52:05,469 - ERROR - Error during DB session usage: module 'app.models.models' has no attribute 'category'
+Traceback (most recent call last):
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\core\database.py", line 41, in get_db
+    yield db
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\concurrency.py", line 27, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 291, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\routers\product.py", line 33, in search_products
+    products = crud.search_products(db, q, company_id, skip, limit)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\crud\crud.py", line 77, in search_products
+    models.category.name.ilike(f"%{q}%"),
+    ^^^^^^^^^^^^^^^
+AttributeError: module 'app.models.models' has no attribute 'category'. Did you mean: 'Category'?
+2025-11-01 01:56:16,515 - INFO - Database engine created successfully.
+2025-11-01 01:56:16,631 - INFO -  Database tables created successfully.
+2025-11-01 01:56:16,634 - INFO -  FastAPI application instance created.
+2025-11-01 01:56:16,648 - INFO -  Product router loaded successfully.
+2025-11-01 01:56:16,658 - INFO -  Company router loaded successfully.
+2025-11-01 01:56:16,663 - INFO -  Category router loaded successfully.
+2025-11-01 01:56:27,531 - INFO - Searching products | Query='software', CompanyID=2, skip=0, limit=10
+2025-11-01 01:56:27,548 - ERROR - Error during DB session usage: name 'or_' is not defined
+Traceback (most recent call last):
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\core\database.py", line 41, in get_db
+    yield db
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\concurrency.py", line 27, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 291, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\routers\product.py", line 33, in search_products
+    products = crud.search_products(db, q, company_id, skip, limit)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\crud\crud.py", line 73, in search_products
+    or_(
+    ^^^
+NameError: name 'or_' is not defined. Did you mean: 'ord'?
+2025-11-01 01:56:49,108 - INFO - Searching products | Query='software', CompanyID=2, skip=0, limit=10
+2025-11-01 01:56:49,109 - ERROR - Error during DB session usage: name 'or_' is not defined
+Traceback (most recent call last):
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\core\database.py", line 41, in get_db
+    yield db
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\concurrency.py", line 27, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 110, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 390, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 291, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\THINKPAD L460\AppData\Roaming\Python\Python313\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\routers\product.py", line 33, in search_products
+    products = crud.search_products(db, q, company_id, skip, limit)
+  File "C:\Users\THINKPAD L460\Desktop\Innogent\PythonAssignments\assignement9_sqlAlchemy\app\crud\crud.py", line 73, in search_products
+    or_(
+    ^^^
+NameError: name 'or_' is not defined. Did you mean: 'ord'?
+2025-11-01 01:59:06,821 - INFO - Database engine created successfully.
+2025-11-01 01:59:06,881 - INFO -  Database tables created successfully.
+2025-11-01 01:59:06,882 - INFO -  FastAPI application instance created.
+2025-11-01 01:59:06,888 - INFO -  Product router loaded successfully.
+2025-11-01 01:59:06,897 - INFO -  Company router loaded successfully.
+2025-11-01 01:59:06,899 - INFO -  Category router loaded successfully.
+2025-11-01 01:59:25,831 - INFO - Searching products | Query='software', CompanyID=2, skip=0, limit=10
+2025-11-01 01:59:25,871 - INFO - Found 1 products matching search criteria
+2025-11-01 02:01:07,607 - INFO - Creating new product: web mopper
+2025-11-01 02:01:07,666 - INFO - Product created successfully with ID: 4
+2025-11-01 02:01:14,579 - INFO - Searching products | Query='software', CompanyID=2, skip=0, limit=10
+2025-11-01 02:01:14,585 - INFO - Found 2 products matching search criteria
+2025-11-01 02:01:55,511 - INFO - Searching products | Query='web mopper', CompanyID=None, skip=0, limit=10
+2025-11-01 02:01:55,517 - INFO - Found 1 products matching search criteria
+2025-11-01 02:02:10,648 - INFO - Searching products | Query='web mopper', CompanyID=1, skip=0, limit=10
+2025-11-01 02:02:10,652 - INFO - Found 0 products matching search criteria
+2025-11-01 02:02:17,046 - INFO - Searching products | Query='web mopper', CompanyID=2, skip=0, limit=10
+2025-11-01 02:02:17,049 - INFO - Found 1 products matching search criteria
+2025-11-01 02:02:34,134 - INFO - Searching products | Query='1000', CompanyID=2, skip=0, limit=10
+2025-11-01 02:02:34,137 - INFO - Found 2 products matching search criteria
+2025-11-01 02:02:59,237 - INFO - Searching products | Query='10000', CompanyID=2, skip=0, limit=10
+2025-11-01 02:02:59,241 - INFO - Found 1 products matching search criteria
+2025-11-01 02:03:18,357 - INFO - Searching products | Query='100000', CompanyID=2, skip=0, limit=10
+2025-11-01 02:03:18,361 - INFO - Found 1 products matching search criteria
+2025-11-01 02:03:24,678 - INFO - Searching products | Query='100000', CompanyID=None, skip=0, limit=10
+2025-11-01 02:03:24,682 - INFO - Found 1 products matching search criteria
+2025-11-01 02:03:34,017 - INFO - Searching products | Query='100', CompanyID=None, skip=0, limit=10
+2025-11-01 02:03:34,020 - INFO - Found 2 products matching search criteria
+2025-11-01 02:03:50,763 - INFO - Searching products | Query='100', CompanyID=1, skip=0, limit=10
+2025-11-01 02:03:50,766 - INFO - Found 0 products matching search criteria
+2025-11-01 02:04:03,198 - INFO - Searching products | Query='10', CompanyID=None, skip=0, limit=10
+2025-11-01 02:04:03,201 - INFO - Found 3 products matching search criteria

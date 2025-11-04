@@ -1,5 +1,0 @@
-fastapi
-uvicorn[standard]
-prisma               # prisma python client
-python-dotenv
-pydantic

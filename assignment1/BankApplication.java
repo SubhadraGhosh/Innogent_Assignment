@@ -25,7 +25,7 @@ class Transaction {
 }
 
 //  Abstract Class (Abstraction + Base for Inheritance) 
-abstract class BankAccount implements AccountOperations {
+class BankAccount implements AccountOperations {
     private String accountNumber;
     private String accountHolder;
     protected double balance;
