@@ -1,7 +1,7 @@
 import java.util.*;
 
 // Employee class implementing Comparable for natural sorting
-class Employee implements Comparable<Employee> {
+class Employee { //implements Comparable<Employee>
     int id;
     String name;
     String department;
@@ -16,7 +16,7 @@ class Employee implements Comparable<Employee> {
     }
 
     // Comparable: Sorting by Department → Name → Salary
-    @Override
+   // @Override
     public int compareTo(Employee other) {
         // First compare by department
         int deptCompare = this.department.compareTo(other.department);
@@ -47,7 +47,9 @@ class SalaryDescComparator implements Comparator<Employee> {
     @Override
     public int compare(Employee e1, Employee e2) {
         // For descending, reverse the natural order of salary
-        return Integer.compare(e2.salary, e1.salary);
+        //return Integer.compare(e2.salary, e1.salary);
+        return
+
     }
 }
 
@@ -76,6 +78,7 @@ class Main {
         // Sorting using Comparable (Department → Name → Salary)
         System.out.println("Sorting by Department → Name → Salary:");
         Collections.sort(list);
+
         Iterator<Employee> itr1 = list.iterator();
         while (itr1.hasNext()) {
             System.out.println(itr1.next());
@@ -84,11 +87,12 @@ class Main {
         System.out.println();
 
         // Sorting using Comparator (Salary descending)
-        System.out.println("Sorting by Salary (Descending):");
-        Collections.sort(list, new SalaryDescComparator());
-        Iterator<Employee> itr2 = list.iterator();
-        while (itr2.hasNext()) {
-            System.out.println(itr2.next());
-        }
+        //System.out.println("Sorting by Salary (Descending):");
+        //Collections.sort(list, new SalaryDescComparator());
+       // Collections.sort(list);
+//        Iterator<Employee> itr2 = list.iterator();
+//        while (itr2.hasNext()) {
+//            System.out.println(itr2.next());
+//        }
     }
 }

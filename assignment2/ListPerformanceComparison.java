@@ -9,9 +9,10 @@ public class ListPerformanceComparison {
     private static long calculateInsertionTime(List<Integer> list, int size) {
         long startingTime = System.currentTimeMillis();
         for(int i=0; i<size; i++){
+            if(list instanceof LinkedList ) list.add(i);
             list.add(i);
         }
-         
+
         long endingTime = System.currentTimeMillis();
         return endingTime - startingTime;
     }
