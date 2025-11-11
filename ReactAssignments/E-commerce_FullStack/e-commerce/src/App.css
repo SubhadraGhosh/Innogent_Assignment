@@ -1,0 +1,464 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Header main container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Left section - logo */
+.header-left .header-logo {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Right section - icons */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Icons style */
+.header-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.2s ease;
+}
+
+/* Hover effect for icons */
+.header-icon:hover {
+  transform: scale(1.15);
+  filter: brightness(0) saturate(100%) invert(38%) sepia(78%) saturate(1263%) hue-rotate(204deg) brightness(95%) contrast(101%);
+}
+
+/* Active route icon effect */
+.active-link .header-icon {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(93%) saturate(5005%) hue-rotate(204deg) brightness(97%) contrast(101%);
+  transform: scale(1.1);
+}
+
+/* Responsive header adjustments for small screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .header-left h1 {
+    font-size: 1.3rem;
+  }
+
+  .header-right {
+    gap: 15px;
+  }
+
+  .header-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+
+.products-list {
+  padding: 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 50px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.product-image {
+  width: 100px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.product-rating {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.product-details {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+}
+
+.product-details-left {
+  flex: 1;
+  text-align: center;
+}
+
+.product-details-image {
+  width: 250px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.product-details-right {
+  flex: 2;
+}
+
+.product-category {
+  font-style: italic;
+  color: #555;
+}
+
+.product-description {
+  margin: 15px 0;
+  color: #444;
+  line-height: 1.4;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.product-rating {
+  margin-top: 10px;
+  color: #ff9800;
+  font-weight: 500;
+}
+
+.status-message {
+  text-align: center;
+  padding: 30px;
+  font-size: 18px;
+}
+
+.status-message.error {
+  color: red;
+}
+
+.status-message.loading {
+  color: #555;
+}
+
+.status-message.not-found {
+  color: #777;
+}
+
+.active-link {
+  border-bottom: 2px solid #007bff;
+  border-radius: 2px;
+}
+
+/* Fixed small typo in transform property */
+.header-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.category-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.search-bar {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.search-input {
+  width: 60%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+/* Category button styling */
+.category-btn {
+  padding: 8px 18px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #333;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for category button */
+.category-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #aaa;
+  transform: scale(1.05);
+}
+
+/* Active category button */
+.category-btn.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+  transform: scale(1.08);
+}
+
+/* Mobile responsive category button */
+@media (max-width: 600px) {
+  .category-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+}
+
+.custom-text-color {
+  color: #e2e1e1;
+  /* any color you want */
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+
+.dropdown-toggle-no-arrow::after {
+  display: none !important;
+}
+
+
+/* 
+   GLOBAL STYLES
+ */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafc;
+  color: #222;
+  padding-top: 80px;
+}
+
+/* 
+   HEADER STYLES
+ */
+
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active-link {
+  color: #0d6efd !important;
+}
+
+/* Header icons */
+.header-icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.header-icon:hover {
+  transform: scale(1.1);
+}
+
+/* 
+   PRODUCT CARD STYLES
+ */
+
+.card {
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+   BUTTONS & BADGES
+ */
+
+button,
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover,
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.badge {
+  font-size: 12px;
+}
+
+/* 
+   CART PAGE POLISH
+ */
+
+.cart-item {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.cart-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 
+   ORDERS PAGE POLISH
+ */
+
+.order-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.order-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+   EMPTY STATE POLISH
+ */
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.text-center img {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.text-center img:hover {
+  opacity: 1;
+}
+
+.btn-primary {
+  background-color: #0d6efd !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7 !important;
+}
+
+/* 
+   FOOTER POLISH
+ */
+
+footer {
+  background-color: #fff;
+  border-top: 1px solid #eaeaea;
+  padding: 15px 0;
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  display: sticky;
+}
+
+.cart-item {
+  border: 1px solid #eaeaea !important;
+  border-radius: 10px !important;
+  background-color: #fff !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cart-item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item button {
+  min-width: 30px;
+}

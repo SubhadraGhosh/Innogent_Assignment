@@ -6,22 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="678bfdb9-3a10-4354-ae1a-3e62de1b80d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/AccountOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/AccountOperations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/BankAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/BankAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/BankApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/BankApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/BankApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/BankApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/CurrentAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/CurrentAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/Fact.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/Fact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/FactorialRecursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/FactorialRecursion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/SavingsAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/SavingsAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/TransactionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment1/factorialIteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment1/factorialIteration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/ListPerformanceComparison.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/ListPerformanceComparison.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/ListPerformanceComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/ListPerformanceComparison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment2/sortEmployees.java" beforeDir="false" afterPath="$PROJECT_DIR$/assignment2/sortEmployees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ReactAssignments/ecommerce-web/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/ReactAssignments/ecommerce-web/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

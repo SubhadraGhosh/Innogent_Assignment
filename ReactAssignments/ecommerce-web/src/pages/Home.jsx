@@ -11,13 +11,13 @@ export default function Home(){
   useEffect(()=>{
     axios.get('https://fakestoreapi.com/products')
       .then(res => {
-        setProducts(res.data)
+        setProducts(respose.data)
         const cats = Array.from(new Set(res.data.map(p=>p.category)))
         setCategories(cats)
       })
       .catch(err => console.error(err))
   },[])
-
+  
   const filtered = products.filter(p=>{
     if(category !== 'all' && p.category !== category) return false
     if(search.trim() && !p.title.toLowerCase().includes(search.toLowerCase())) return false
